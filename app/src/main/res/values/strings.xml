@@ -10,7 +10,8 @@
     <string name="hint_git">Репозиторий</string>
     <string name="text_git">github.com/fr00kt/DevIntensive</string>
     <string name="hint_about_me">О себе</string>
-    <string name="text_about_me">Нечего сказать</string>
+    <string name="text_about_me">Нечего сказать о себе Нечего сказать о себе
+        Нечего сказать о себе Нечего сказать о себе Нечего сказать о себе</string>
 
     <string name="rating_value">5</string>
     <string name="rating_text">Рейтинг</string>

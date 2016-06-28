@@ -37,4 +37,6 @@
     <dimen name="font_normal_15">15sp</dimen>
     <dimen name="font_large_12">18sp</dimen>
     <dimen name="font_larger_12">22sp</dimen>
+    <dimen name="profile_image_size">256dp</dimen>
+    <dimen name="fab_right_space">8dp</dimen>
 </resources>
