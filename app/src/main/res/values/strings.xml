@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">DevIntensive</string>
+    <string name="app_name">Абдулин Игорь</string>
+
+    <string name="hint_phone">Мобильный</string>
+    <string name="text_phone">+7 (922) 108-73-20</string>
+    <string name="hint_mail">E-mail</string>
+    <string name="text_mail">cha0s.of.hell@gmail.com</string>
+    <string name="hint_vk">Профиль в VK</string>
+    <string name="text_vk">vk.com/id163515685</string>
+    <string name="hint_git">Репозиторий</string>
+    <string name="text_git">github.com/fr00kt/DevIntensive</string>
+    <string name="hint_about_me">О себе</string>
+    <string name="text_about_me">Нечего сказать</string>
+
+    <string name="rating_value">5</string>
+    <string name="rating_text">Рейтинг</string>
+    <string name="code_lines_value">5</string>
+    <string name="code_lines__text">Написано строк кода</string>
+    <string name="projects_value">5</string>
+    <string name="projects_text">Проектов</string>
 </resources>
