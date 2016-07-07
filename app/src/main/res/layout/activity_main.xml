@@ -7,8 +7,7 @@
     tools:context=".ui.activities.MainActivity"
     android:id="@+id/navigation_drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/main_coordinator_conteiner"
@@ -21,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/color_primary"
-            >
+            android:fitsSystemWindows="true">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_toolbar"
@@ -62,6 +61,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/status_bar"
                     style="@style/status_bar"
                     android:background="@color/gray"
                     android:weightSum="4">

@@ -16,7 +16,7 @@ public class PreferencesManager {
                                                     ConstantManager.USER_MAIL_KEY,
                                                     ConstantManager.USER_VK_KEY,
                                                     ConstantManager.USER_GIT_KEY,
-                                                    ConstantManager.USER_BIO_KET};
+                                                    ConstantManager.USER_BIO_KEY};
     public PreferencesManager(){
         this.mSharedPreferences = DevIntensiveApplication.getSharedPreferences();
     }
@@ -36,7 +36,7 @@ public class PreferencesManager {
         userFields.add(mSharedPreferences.getString(ConstantManager.USER_MAIL_KEY, "null"));
         userFields.add(mSharedPreferences.getString(ConstantManager.USER_VK_KEY, "null"));
         userFields.add(mSharedPreferences.getString(ConstantManager.USER_GIT_KEY, "null"));
-        userFields.add(mSharedPreferences.getString(ConstantManager.USER_BIO_KET, "null"));
+        userFields.add(mSharedPreferences.getString(ConstantManager.USER_BIO_KEY, "null"));
         return userFields;
     }
 }

@@ -10,14 +10,17 @@ import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
 import com.softdesign.devintensive.utils.ConstantManager;
+import com.softdesign.devintensive.utils.ViewBehavior;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +81,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mUserInfoViews.add(mUserBio);
 
         mFab.setOnClickListener(this);
+
+        ViewBehavior vBehavior = new ViewBehavior();
+        // Делаем пересчет в пиксели
+        int mPadding = getResources().getDimensionPixelSize(R.dimen.spacing_half_normal_28);
+        // Передаем идентификатор плашки и сдвиг
+        vBehavior.setHeader((LinearLayout) findViewById(R.id.status_bar), mPadding);
+        CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) mFab.getLayoutParams();
+        params.setBehavior(vBehavior);
 
         setupToolbar();
         setupDrawer();
@@ -257,5 +268,32 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             userData.add(userFieldView.getText().toString());
         }
         mDataManager.getPreferencesManager().saveUserProfileData(userData);
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ECLAIR
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            // Take care of calling this method on earlier versions of
+            // the platform where it doesn't exist.
+            onBackPressed();
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // This will be called either automatically for you on 2.0
+        // or later, or by the code above on earlier versions of the
+        // platform.
+        if (mNavigationDrawer.isDrawerOpen(GravityCompat.START)){
+            mNavigationDrawer.closeDrawer(GravityCompat.START);
+            Log.d(TAG, "Drawer opened");
+        } else {
+            Log.d(TAG, "Drawer closed");
+            super.onBackPressed();
+        }
+        return;
     }
 }
