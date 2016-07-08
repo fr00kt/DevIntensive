@@ -19,7 +19,7 @@ public class ViewBehavior extends FloatingActionButton.Behavior {
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, FloatingActionButton child, View dependency) {
         if (child != null) {
-            if (child.isShown() == true) {
+            if (child.isShown()) {
                 if (mHeaderBar != null) {
                     mHeaderBar.setPadding(0, mPadding, 0, mPadding);
                 }
