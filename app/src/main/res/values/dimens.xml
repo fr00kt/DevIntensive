@@ -39,4 +39,10 @@
     <dimen name="font_larger_12">22sp</dimen>
     <dimen name="profile_image_size">256dp</dimen>
     <dimen name="fab_right_space">8dp</dimen>
+    <dimen name="placeholder_photo_size_90">90dp</dimen>
+
+    <dimen name="auth_linear_margin_top">144dp</dimen>
+    <dimen name="enter_text_size">24sp</dimen>
+    <dimen name="auth_field_text_size">18sp</dimen>
+    <dimen name="auth_forget_text_size">14sp</dimen>
 </resources>
