@@ -1,65 +1,15 @@
 <android.support.v4.widget.NestedScrollView
+    android:id="@+id/nested_scroll"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior=".ui.behaviors.CustomNestedScrollBehavior">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/status_bar"
-            style="@style/status_bar"
-            android:background="@color/gray"
-            android:weightSum="4">
-
-            <LinearLayout
-                style="@style/main_layout_status_bar"
-                android:layout_weight="1">
-
-                <TextView
-                    style="@style/status_bar_text.value"
-                    android:text="@string/rating_value"/>
-
-                <TextView
-                    style="@style/status_bar_text"
-                    android:text="@string/rating_text"/>
-            </LinearLayout>
-
-            <View style="@style/view_line.vertical"/>
-
-            <LinearLayout
-                style="@style/main_layout_status_bar"
-                android:layout_weight="2">
-
-                <TextView
-                    style="@style/status_bar_text.value"
-                    android:text="@string/code_lines_value"/>
-
-                <TextView
-                    style="@style/status_bar_text"
-                    android:text="@string/code_lines__text"/>
-            </LinearLayout>
-
-            <View style="@style/view_line.vertical"/>
-
-            <LinearLayout
-                style="@style/main_layout_status_bar"
-                android:layout_weight="1">
-
-                <TextView
-                    style="@style/status_bar_text.value"
-                    android:text="@string/projects_value"/>
-
-                <TextView
-                    style="@style/status_bar_text"
-                    android:text="@string/projects_text"/>
-
-            </LinearLayout>
-        </LinearLayout>
 
         <LinearLayout
             style="@style/info_layout">
@@ -78,9 +28,9 @@
                     <EditText
                         android:id="@+id/phone_et"
                         style="@style/info_text"
-                        android:hint="@string/hint_phone"
+                        android:hint="@string/profile.phone.hint"
                         android:inputType="phone"
-                        android:text="@string/text_phone"/>
+                        android:text="@string/profile.phone.dummy"/>
 
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
@@ -111,8 +61,8 @@
                     <EditText
                         android:id="@+id/email_et"
                         style="@style/info_text"
-                        android:hint="@string/hint_mail"
-                        android:text="@string/text_mail"/>
+                        android:hint="@string/profile.mail.hint"
+                        android:text="@string/profile.mail.dummy"/>
 
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
@@ -143,8 +93,8 @@
                     <EditText
                         android:id="@+id/vk_et"
                         style="@style/info_text"
-                        android:hint="@string/hint_vk"
-                        android:text="@string/text_vk"/>
+                        android:hint="@string/profile.vk.hint"
+                        android:text="@string/profile.vk.dummy"/>
 
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
@@ -175,8 +125,8 @@
                     <EditText
                         android:id="@+id/git_et"
                         style="@style/info_text"
-                        android:hint="@string/hint_git"
-                        android:text="@string/text_git"/>
+                        android:hint="@string/profile.github.hint"
+                        android:text="@string/profile.github.dummy"/>
 
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
@@ -207,8 +157,8 @@
                     <EditText
                         android:id="@+id/about_me_et"
                         style="@style/info_text"
-                        android:hint="@string/hint_about_me"
-                        android:text="@string/text_about_me"/>
+                        android:hint="@string/profile.bio.hint"
+                        android:text="@string/profile.bio.dummy"/>
 
                 </android.support.design.widget.TextInputLayout>
 

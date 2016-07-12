@@ -9,7 +9,7 @@
                 android:paddingTop="@dimen/spacing_medial_24">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/profile_avatar"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/user_photo"
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
-            android:text="@string/text_mail"
+            android:text="@string/profile.mail.dummy"
             android:textColor="@color/white"
             android:textSize="14sp"/>
     </LinearLayout>
