@@ -10,6 +10,12 @@
     <dimen name="size_larger_80">80dp</dimen>
 
     <dimen name="line_size">1dp</dimen>
+    <dimen name="profile_image_size">256dp</dimen>
+    <dimen name="fab_right_space">8dp</dimen>
+    <dimen name="placeholder_photo_size_90">90dp</dimen>
+    <dimen name="user_info_size">112dp</dimen>
+    <dimen name="status_bar_height">112dp</dimen>
+
 
     <!--Margins-->
     <dimen name="margin_8">8dp</dimen>
@@ -33,13 +39,8 @@
     <dimen name="spacing_larger_72">72dp</dimen>
 
     <!-- Font sizes -->
-    <dimen name="font_small_12">12sp</dimen>
-    <dimen name="font_normal_15">15sp</dimen>
-    <dimen name="font_large_12">18sp</dimen>
-    <dimen name="font_larger_12">22sp</dimen>
-    <dimen name="profile_image_size">256dp</dimen>
-    <dimen name="fab_right_space">8dp</dimen>
-    <dimen name="placeholder_photo_size_90">90dp</dimen>
+    <dimen name="font_small_14">14sp</dimen>
+    <dimen name="font_medium_20">20sp</dimen>
 
     <dimen name="auth_linear_margin_top">144dp</dimen>
     <dimen name="enter_text_size">24sp</dimen>

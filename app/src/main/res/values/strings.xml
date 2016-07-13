@@ -1,33 +1,41 @@
 <resources>
+
+    <!--FontFamily-->
+    <string name="ff_regular">sans-serif</string>
+    <string name="ff_medium">sans-serif-medium</string>
+
     <string name="app_name">Абдулин Игорь</string>
 
-    <string name="hint_phone">Мобильный</string>
-    <string name="text_phone">+7 (922) 108-73-20</string>
-    <string name="hint_mail">E-mail</string>
-    <string name="text_mail">cha0s.of.hell@gmail.com</string>
-    <string name="hint_vk">Профиль в VK</string>
-    <string name="text_vk">vk.com/id163515685</string>
-    <string name="hint_git">Репозиторий</string>
-    <string name="text_git">github.com/fr00kt/DevIntensive</string>
-    <string name="hint_about_me">О себе</string>
-    <string name="text_about_me">Нечего сказать о себе Нечего сказать о себе
+    <string name="profile.phone.hint">Мобильный</string>
+    <string name="profile.phone.dummy">+7 (922) 108-73-20</string>
+    <string name="profile.mail.hint">E-mail</string>
+    <string name="profile.mail.dummy">cha0s.of.hell@gmail.com</string>
+    <string name="profile.vk.hint">Профиль в VK</string>
+    <string name="profile.vk.dummy">vk.com/id163515685</string>
+    <string name="profile.github.hint">Репозиторий</string>
+    <string name="profile.github.dummy">github.com/fr00kt/DevIntensive</string>
+    <string name="profile.bio.hint">О себе</string>
+    <string name="profile.bio.dummy">Нечего сказать о себе Нечего сказать о себе
         Нечего сказать о себе Нечего сказать о себе Нечего сказать о себе</string>
 
-    <string name="rating_value">5</string>
-    <string name="rating_text">Рейтинг</string>
-    <string name="code_lines_value">5</string>
-    <string name="code_lines__text">Написано строк кода</string>
-    <string name="projects_value">5</string>
-    <string name="projects_text">Проектов</string>
+    <string name="profile.user_info.rait.dummy">5</string>
+    <string name="profile.user_info.rait.hint">Рейтинг</string>
+    <string name="profile.user_info.code_line.dummy">5</string>
+    <string name="profile.user_info.code_line.hint">Написано строк кода</string>
+    <string name="profile.user_info.project.dummy">5</string>
+    <string name="profile.user_info.project.hint">Проектов</string>
+
     <string name="user_profile.plaseholder.image">Изменить фотографию профиля</string>
+    <string name="user_profile.chose.message">Выберите фото</string>
     <string name="user_profile.dialog.gallery">Загрузить из галлереи</string>
     <string name="user_profile.dialog.camera">Сделать снимок</string>
     <string name="user_profile.dialog.cancel">Отмена</string>
     <string name="user_profile.dialog.title">Изменить фотографию профиля</string>
-    <string name="user_profile.chose.message">выберите фото</string>
 
-    <string name="enter_text">ВОЙТИ</string>
-    <string name="e_mail">E-mail</string>
-    <string name="pass">Password</string>
-    <string name="forget_pass">Забыли пароль?</string>
+    <!--AuthActivity-->
+    <string name="auth.authorization_enter">Войти</string>
+    <string name="auth.email">Введите e-mail</string>
+    <string name="auth.password">Введите пароль</string>
+    <string name="auth.login">Войти</string>
+    <string name="auth.remember">Забыли пароль?</string>
 </resources>
