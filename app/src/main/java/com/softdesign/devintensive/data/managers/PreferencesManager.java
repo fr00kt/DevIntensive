@@ -89,15 +89,12 @@ public class PreferencesManager {
     }
 
     public Uri loadUserAvatar() {
-        String userAvatar = mSharedPreferences.getString(ConstantManager.USER_AVATAR_KEY, "android.resource://com.softdesign.devintensive/drawable/user_avatar");
-
-        return Uri.parse(userAvatar);
+        return Uri.parse(mSharedPreferences.getString(ConstantManager.USER_AVATAR_KEY, "android.resource://com.softdesign.devintensive/drawable/user_photo"));
     }
 
     public void saveUserAvatar(Uri uri) {
         if (uri != null) {
             SharedPreferences.Editor editor = mSharedPreferences.edit();
-
             editor.putString(ConstantManager.USER_AVATAR_KEY, uri.toString());
             editor.apply();
         }

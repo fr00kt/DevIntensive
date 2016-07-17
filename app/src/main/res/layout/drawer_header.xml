@@ -8,7 +8,7 @@
                 android:paddingRight="@dimen/spacing_normal_16"
                 android:paddingTop="@dimen/spacing_medial_24">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/profile_avatar"
         android:layout_width="60dp"
         android:layout_height="60dp"

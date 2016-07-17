@@ -36,6 +36,7 @@ import android.widget.TextView;
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
+import com.softdesign.devintensive.utils.CircleTransform;
 import com.softdesign.devintensive.utils.ConstantManager;
 import com.squareup.picasso.Picasso;
 
@@ -52,6 +53,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private DataManager mDataManager;
 
+    private ImageView mUserAvatar;
+    private NavigationView mNavigationView;
+
     private int mCurrentEditMode = 0;
 
     private ImageView mCallImg;
@@ -67,7 +71,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private RelativeLayout mProfilePlaceholder;
     private CollapsingToolbarLayout mCollapsingToolbar;
     private ImageView mProfileImage;
-    private NestedScrollView mNestedScrollView;
 
     private EditText mUserPhone, mUserMail, mUserVk, mUserGit, mUserBio;
     private List<EditText> mUserInfoViews;
@@ -86,6 +89,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Log.d(TAG, "onCreate");
 
         mDataManager = DataManager.getInstance();
+
+        mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
+        mUserAvatar = (ImageView) mNavigationView.getHeaderView(0).findViewById(R.id.profile_avatar);
 
         mCallImg = (ImageView) findViewById(R.id.call_img);
         mSendMailImg = (ImageView) findViewById(R.id.send_img);
@@ -125,7 +131,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         mFab.setOnClickListener(this);
         mProfilePlaceholder.setOnClickListener(this);
-        mNestedScrollView = (NestedScrollView) findViewById(R.id.nested_scroll);
 
         mCallImg.setOnClickListener(this);
         mSendMailImg.setOnClickListener(this);
@@ -142,6 +147,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 .placeholder(R.drawable.user_photo)
                 .into(mProfileImage);
 
+        Picasso.with(this)
+                .load(mDataManager.getPreferencesManager().loadUserAvatar())
+                .transform(new CircleTransform())
+                .into(mUserAvatar);
 
         if (savedInstanceState == null){
             //активити запускается впервые
@@ -315,8 +324,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      * и обрабатывает событие (выполняет действие)
      */
     private void setupDrawer(){
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
                 showSnackbar(item.getTitle().toString());
