@@ -41,6 +41,8 @@
     <!-- Font sizes -->
     <dimen name="font_small_14">14sp</dimen>
     <dimen name="font_medium_20">20sp</dimen>
+    <dimen name="font_large_24">24sp</dimen>
+
 
     <dimen name="auth_linear_margin_top">144dp</dimen>
     <dimen name="enter_text_size">24sp</dimen>

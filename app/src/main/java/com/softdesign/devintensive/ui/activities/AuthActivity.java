@@ -8,14 +8,15 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softdesign.devintensive.R;
 import com.softdesign.devintensive.data.managers.DataManager;
-import com.softdesign.devintensive.data.network.RestService;
 import com.softdesign.devintensive.data.network.req.UserLoginReq;
 import com.softdesign.devintensive.data.network.res.UserModelRes;
 import com.softdesign.devintensive.utils.NetworkStatusChecker;
+import com.squareup.picasso.Picasso;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,6 +28,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
     private TextView mRememberPassword;
     private EditText mLogin, mPassword;
     private CoordinatorLayout mCoordinatorLayout;
+    private ImageView mAuthBg;
 
     private DataManager mDataManager;
 
@@ -42,20 +44,18 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
         mRememberPassword = (TextView) findViewById(R.id.remember_txt);
         mLogin = (EditText) findViewById(R.id.login_email_et);
         mPassword = (EditText) findViewById(R.id.et_login_password_et);
+        mAuthBg = (ImageView) findViewById(R.id.auth_bg_img);
 
         mRememberPassword.setOnClickListener(this);
         mSignIn.setOnClickListener(this);
 
-    }
+        Picasso.with(this)
+                .load(R.drawable.login_bg)
+                .resize(450, 800)
+                .centerCrop()
+                .into(mAuthBg);
 
-    /**
-     * переводит на главную активити
-     */
-/*    private void startMainActivity(){
-        Intent intentActivity = new Intent(this,MainActivity.class);
-        startActivity(intentActivity);
-        finish();
-    }*/
+    }
 
     @Override
     public void onClick(View view) {
@@ -69,7 +69,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
         }
     }
 
-    private void showSnackbar(String message){
+    private void showSnackBar(String message){
         Snackbar.make(mCoordinatorLayout, message,Snackbar.LENGTH_LONG).show();
     }
 
@@ -79,8 +79,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
     }
 
     private void loginSuccess(UserModelRes userModel){
-
-        showSnackbar(userModel.getData().getToken());
         mDataManager.getPreferencesManager().saveAuthToken(userModel.getData().getToken());
         mDataManager.getPreferencesManager().saveUserId(userModel.getData().getUser().getId());
         saveUserValues(userModel);
@@ -100,9 +98,9 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
                     if (response.code() == 200) {
                         loginSuccess(response.body());
                     } else if (response.code() == 404) {
-                        showSnackbar("Неверный логин или пароль");
+                        showSnackBar("Неверный логин или пароль");
                     } else {
-                        showSnackbar("Все пропало Шеф!!!");
+                        showSnackBar("Все пропало Шеф!!!");
                     }
                 }
 
@@ -112,7 +110,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
                 }
             });
         } else {
-            showSnackbar("Сеть на данный момент не доступна, попробуте позже");
+            showSnackBar("Сеть на данный момент не доступна, попробуте позже");
         }
     }
 
@@ -133,7 +131,6 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener{
 
         mDataManager.getPreferencesManager().saveUserProfileValue(userValues);
         mDataManager.getPreferencesManager().saveStringUserProfileValue(userStringValues);
-
     }
 
     private void saveUserPhotos(UserModelRes userModel){
